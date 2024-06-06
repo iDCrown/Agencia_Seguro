@@ -19,7 +19,7 @@
     </head>
     <body>
     <h1 class="text-center">BM AGENCIA SEGUROS</h1>
-    <p class="text-center">Aprende a realizar las 4 operaciones básicas entre PHP y una base de datos, en este caso MYSQL: CRUD(Create, Read, Update, Delete)</p>
+    <p class="text-center">Actualiza a la persona</p>
 
     <div class="container">
 
@@ -37,6 +37,11 @@
             <div class="col-sm-6 offset-3">
             <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
                 <div class="mb-3">
+                    <label for="cedula" class="form-label">Cedula:</label>
+                    <input type="text" class="form-control" name="cedula" placeholder="Ingresa la cedula" value="<?php echo $fila['cedula']; ?>">                    
+                </div>
+
+                <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre:</label>
                     <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre" value="<?php echo $fila['nombre']; ?>">                    
                 </div>
@@ -44,6 +49,16 @@
                 <div class="mb-3">
                     <label for="apellidos" class="form-label">Apellidos:</label>
                     <input type="text" class="form-control" name="apellidos" placeholder="Ingresa los apellidos" value="<?php echo $fila['apellidos']; ?>">                    
+                </div>
+
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Direccion:</label>
+                    <input type="text" class="form-control" name="direccion" placeholder="Ingresa el Direccion" value="<?php echo $fila['direccion']; ?>">                    
+                </div>
+
+                <div class="mb-3">
+                    <label for="barrio" class="form-label">Barrio:</label>
+                    <input type="text" class="form-control" name="barrio" placeholder="Ingresa el Barrio" value="<?php echo $fila['barrio']; ?>">                    
                 </div>
 
                 <div class="mb-3">

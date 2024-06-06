@@ -1,4 +1,4 @@
-<?php include 'config/conexion.php';?>
+<?php include '../config/conexion.php';?>
 <?php
     //Crear y seleccionar query
     $query = "SELECT * FROM Personas ORDER BY idPersonas DESC";
@@ -41,7 +41,7 @@
       </ul>
     </nav>
     <h1 class="text-center">BM AGENCIA SEGUROS</h1>
-    <p class="text-center">Aprende a realizar las 4 operaciones básicas entre PHP y una base de datos, en este caso MYSQL: CRUD(Create, Read, Update, Delete)</p>
+    <p class="text-center">Registra personas, vehículos, accidentes y multas con seguridad en BM AGENCIA SEGUROS</p>
 
     <div class="container">
 
@@ -68,10 +68,10 @@
                             <th>Cedula</th>
                             <th>Nombre</th>
                             <th>Apellidos</th>
+                            <th>Dirección</th>
+                            <th>Barrio</th>
                             <th>Telefono</th>
                             <th>Email</th>
-                            <th>Direccion</th>
-                            <th>Barrio</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -82,13 +82,13 @@
                           <td><?php echo $fila['cedula']; ?></td>
                           <td><?php echo $fila['nombre']; ?></td>
                           <td><?php echo $fila['apellidos']; ?></td>
-                          <td><?php echo $fila['telefono']; ?></td>
-                          <td><?php echo $fila['email']; ?></td>
                           <td><?php echo $fila['direccion']; ?></td>
                           <td><?php echo $fila['barrio']; ?></td>
+                          <td><?php echo $fila['telefono']; ?></td>
+                          <td><?php echo $fila['email']; ?></td>
                           <td>
                           <a href="../formularios/formEditarPersona.php?id=<?php echo $fila['idPersonas']; ?>" class="btn btn-primary"> Editar</a>
-                          <a href="../formularios/formBorrarPersona.php?id=<?php echo $fila['idPersonas']; ?>" class="btn btn-danger"> Borrar</a>
+                          <!-- <a href="../formularios/formBorrarPersona.php?id=<?php echo $fila['idPersonas']; ?>" class="btn btn-danger"> Borrar</a> -->
                           </td>
                         </tr> 
                         <?php endwhile; ?>

@@ -1,8 +1,8 @@
 <?php include '../config/conexion.php';?>
 <?php
     //Crear y seleccionar query
-    $query = "SELECT * FROM usuarios ORDER BY id DESC";
-    $usuarios = mysqli_query($con, $query);
+    $query = "SELECT * FROM multas ORDER BY Numero_de_Referencia DESC";
+    $multas = mysqli_query($con, $query);
 
 ?>
 
@@ -41,6 +41,7 @@
       </ul>
     </nav>
     <h1 class="text-center">BM AGENCIA SEGUROS</h1>
+    <p class="text-center">Registra personas, vehículos, accidentes y multas con seguridad en BM AGENCIA SEGUROS</p>
     <p class="text-center">Ingresar datos de la multa</p>
 
     <div class="container">
@@ -74,7 +75,7 @@
                     </thead>
                     <tbody>
 
-                        <?php while($fila = mysqli_fetch_assoc($usuarios)) : ?>
+                        <?php while($fila = mysqli_fetch_assoc($multas)) : ?>
                         <tr>
                             <td><?php echo $fila['id']; ?></td>
                             <td><?php echo $fila['nombre']; ?></td>

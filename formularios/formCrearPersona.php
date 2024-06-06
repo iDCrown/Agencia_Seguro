@@ -1,4 +1,4 @@
-<?php include "../php/creaPersona.php"?>
+<?php include "../php/crearPersona.php"?>
 <!doctype html>
 <html lang="es">
     <head>
