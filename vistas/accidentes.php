@@ -14,14 +14,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link href="css/estilos.css" rel="stylesheet">
 
-    <title>CRUD PHP Y MYSQL</title>
+    <title>BM AGENCIA SEGUROS</title>
     </head>
     <body>
-    <h1 class="text-center">CRUD PHP Y MYSQL</h1>
+    <nav class="navbar bg-primary" data-bs-theme="dark">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../index.php">INICIO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="personas.php">Personas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="vehiculos.php">Vehiculos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="accidentes.php">Accidentes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="multas.php" aria-disabled="true">Multas</a>
+        </li>
+      </ul>
+    </nav>
+    <h1 class="text-center">BM AGENCIA SEGUROS</h1>
     <p class="text-center">Aprende a realizar las 4 operaciones básicas entre PHP y una base de datos, en este caso MYSQL: CRUD(Create, Read, Update, Delete)</p>
 
     <div class="container">
@@ -36,7 +55,7 @@
 
         <div class="row">
             <div class="col-sm-4 offset-8">
-                <a href="crear.php" class="btn btn-success w-100"> Crear Nuevo Registro</a>
+                <a href="../formularios/formCrearAccidente.php" class="btn btn-success w-100"> Crear Nuevo Registro</a>
             </div>            
         </div>
 
@@ -63,8 +82,8 @@
                             <td><?php echo $fila['telefono']; ?></td>
                             <td><?php echo $fila['email']; ?></td>
                             <td>
-                            <a href="editar.php?id=<?php echo $fila['id']; ?>" class="btn btn-primary"> Editar</a>
-                            <a href="borrar.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger"> Borrar</a>
+                            <a href="../formularios/formEditarAccidente.php?id=<?php echo $fila['id']; ?>" class="btn btn-primary"> Editar</a>
+                            <a href="../formularios/formBorrarAccidente.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger"> Borrar</a>
                             </td>
                         </tr> 
 

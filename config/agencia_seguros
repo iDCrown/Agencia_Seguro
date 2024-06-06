@@ -11,7 +11,7 @@ CREATE TABLE Personas (
     barrio VARCHAR(100),
     telefono VARCHAR(20),
     correo_electronico VARCHAR(255)
-);
+);g
 
 -- Creación de la tabla Vehiculos
 CREATE TABLE Vehiculos (
@@ -51,7 +51,7 @@ CREATE TABLE Multas (
     Lugar VARCHAR(255),
     Importe DECIMAL(10, 2),
     idPersona INT,
-    PlacaVehiculo VARCHAR(20),
+    PlacaVehiculo INT,
     FOREIGN KEY (idPersona) REFERENCES Personas(idPersonas),
-    FOREIGN KEY (PlacaVehiculo) REFERENCES Vehiculos(placa)
+    FOREIGN KEY (PlacaVehiculo) REFERENCES Vehiculos(idVehiculo)
 );
