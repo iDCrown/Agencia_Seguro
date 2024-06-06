@@ -1,4 +1,8 @@
-<?php include "../php/creaPersona.php"?>
+<?php
+    //Incluimos conexión
+    include "../php/editarPersona.php";
+
+?>
 <!doctype html>
 <html lang="es">
     <head>
@@ -11,17 +15,18 @@
 
     <link href="css/estilos.css" rel="stylesheet">
 
-    <title>CRUD PHP Y MYSQL</title>
+    <title>BM AGENCIA SEGUROS</title>
     </head>
     <body>
-    <h1 class="text-center">CRUD PHP Y MYSQL</h1>
+    <h1 class="text-center">BM AGENCIA SEGUROS</h1>
     <p class="text-center">Aprende a realizar las 4 operaciones básicas entre PHP y una base de datos, en este caso MYSQL: CRUD(Create, Read, Update, Delete)</p>
 
     <div class="container">
 
     <div class="row">
-        <h4>Crear un Nuevo Registro</h4>
-    </div>   
+        <h4>Editar un Registro Existente</h4>
+    </div>
+
 
         <div class="row caja">
 
@@ -29,34 +34,33 @@
                 <h4 class="bg-danger text-white"><?php echo $error; ?></h4>
             <?php endif; ?>
 
-
             <div class="col-sm-6 offset-3">
-            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre">                    
+                    <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre" value="<?php echo $fila['nombre']; ?>">                    
                 </div>
                 
                 <div class="mb-3">
                     <label for="apellidos" class="form-label">Apellidos:</label>
-                    <input type="text" class="form-control" name="apellidos" placeholder="Ingresa los apellidos">                    
+                    <input type="text" class="form-control" name="apellidos" placeholder="Ingresa los apellidos" value="<?php echo $fila['apellidos']; ?>">                    
                 </div>
 
                 <div class="mb-3">
                     <label for="telefono" class="form-label">Telefono:</label>
-                    <input type="number" class="form-control" name="telefono" placeholder="Ingresa el teléfono">                    
+                    <input type="number" class="form-control" name="telefono" placeholder="Ingresa el teléfono" value="<?php echo $fila['telefono']; ?>">                    
                 </div>
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" name="email" placeholder="Ingresa el email">                    
+                    <input type="email" class="form-control" name="email" placeholder="Ingresa el email" value="<?php echo $fila['email']; ?>">                    
                 </div>
             
-                <button type="submit" class="btn btn-primary w-100" name="crearRegistro">Crear Registro</button>
+                <button type="submit" class="btn btn-primary w-100" name="editarRegistro">Editar Registro</button>
 
                 </form>
             </div>
         </div>
     </div>
-    </body>
+  </body>
 </html>

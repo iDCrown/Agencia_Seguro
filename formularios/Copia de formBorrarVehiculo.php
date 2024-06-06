@@ -40,10 +40,10 @@
 
     <link href="css/estilos.css" rel="stylesheet">
 
-    <title>CRUD PHP Y MYSQL</title>
+    <title>BM AGENCIA SEGUROS</title>
   </head>
   <body>
-    <h1 class="text-center">CRUD PHP Y MYSQL</h1>
+    <h1 class="text-center">BM AGENCIA SEGUROS</h1>
     <p class="text-center">Aprende a realizar las 4 operaciones básicas entre PHP y una base de datos, en este caso MYSQL: CRUD(Create, Read, Update, Delete)</p>
 
     <div class="container">
