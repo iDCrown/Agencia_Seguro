@@ -1,0 +1,57 @@
+--Creación de la base de datos
+CREATE DATABASE agencia_seguros;
+
+-- Creación de la tabla Personas
+CREATE TABLE Personas (
+    idPersonas INT AUTO_INCREMENT PRIMARY KEY,
+    cedula VARCHAR(20),
+    nombre VARCHAR(100),
+    apellidos VARCHAR(100),
+    direccion VARCHAR(255),
+    barrio VARCHAR(100),
+    telefono VARCHAR(20),
+    correo_electronico VARCHAR(255)
+);
+
+-- Creación de la tabla Vehiculos
+CREATE TABLE Vehiculos (
+    idVehiculo INT AUTO_INCREMENT PRIMARY KEY,
+    placa VARCHAR(20),
+    marca VARCHAR(100),
+    modelo VARCHAR(100),
+    precio DECIMAL(10, 2),
+    idPropietario INT,
+    FOREIGN KEY (idPropietario) REFERENCES Personas(idPersonas)
+);
+
+-- Creación de la tabla Accidentes
+CREATE TABLE Accidentes (
+    Numero_de_Referencia INT AUTO_INCREMENT PRIMARY KEY,
+    Fecha DATE,
+    Lugar VARCHAR(255),
+    Hora TIME
+);
+
+-- Creación de la tabla Participantes_en_Accidentes
+CREATE TABLE Participantes_en_Accidentes (
+    idAccidente INT,
+    idPersona INT,
+    idVehiculo INT,
+    PRIMARY KEY (idAccidente, idPersona, idVehiculo),
+    FOREIGN KEY (idAccidente) REFERENCES Accidentes(Numero_de_Referencia),
+    FOREIGN KEY (idPersona) REFERENCES Personas(idPersonas),
+    FOREIGN KEY (idVehiculo) REFERENCES Vehiculos(idVehiculo)
+);
+
+-- Creación de la tabla Multas
+CREATE TABLE Multas (
+    Numero_de_Referencia INT AUTO_INCREMENT PRIMARY KEY,
+    Fecha DATE,
+    Hora TIME,
+    Lugar VARCHAR(255),
+    Importe DECIMAL(10, 2),
+    idPersona INT,
+    PlacaVehiculo VARCHAR(20),
+    FOREIGN KEY (idPersona) REFERENCES Personas(idPersonas),
+    FOREIGN KEY (PlacaVehiculo) REFERENCES Vehiculos(placa)
+);
