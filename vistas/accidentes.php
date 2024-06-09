@@ -83,7 +83,7 @@
                             <td><?php echo $fila['email']; ?></td>
                             <td>
                             <a href="../formularios/formEditarAccidente.php?id=<?php echo $fila['id']; ?>" class="btn btn-primary"> Editar</a>
-                            <a href="../formularios/formBorrarAccidente.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger"> Borrar</a>
+                            <!-- <a href="../formularios/formBorrarAccidente.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger"> Borrar</a> -->
                             </td>
                         </tr> 
 

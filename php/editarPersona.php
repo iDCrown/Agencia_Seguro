@@ -37,6 +37,8 @@
         if(!isset($cedula) || $cedula == '' ||!isset($nombre) || $nombre == '' || !isset($apellidos) || $apellidos == '' || !isset($direccion) || $direccion == '' ||!isset($barrio) || $barrio == '' ||!isset($telefono) || $telefono == '' || !isset($email) || $email == ''){
             $error = "Algunos campos están vacíos";
         }else{
+
+            
             $query = "UPDATE personas set cedula = '$cedula', nombre='$nombre', apellidos='$apellidos', direccion = '$direccion', barrio = '$barrio', telefono='$telefono', email='$email' where idPersonas='$idRegistro'";
 
             if(!mysqli_query($con, $query)){

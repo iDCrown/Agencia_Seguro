@@ -1,11 +1,7 @@
-<?php
-    //Incluimos conexión
-    include "../php/editarPersona.php";
-
-?>
+<?php include "../php/editarVehiculo.php"; ?>
 <!doctype html>
 <html lang="es">
-    <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,16 +12,17 @@
     <link href="css/estilos.css" rel="stylesheet">
 
     <title>BM AGENCIA SEGUROS</title>
-    </head>
-    <body>
-    <h1 class="text-center">BM AGENCIA SEGUROS</h1>
-    <p class="text-center">Aprende a realizar las 4 operaciones básicas entre PHP y una base de datos, en este caso MYSQL: CRUD(Create, Read, Update, Delete)</p>
+</head>
+<body>
+<h1 class="text-center">BM AGENCIA SEGUROS</h1>
+<p class="text-center">Registra los datos del vehículo</p>
 
-    <div class="container">
+<div class="container">
 
     <div class="row">
-        <h4>Editar un Registro Existente</h4>
-    </div>
+        <h4>Edita a <?php echo $fila['nombre'] . " " . $fila['apellidos']; ?></h4>
+    </div>   
+
 
 
         <div class="row caja">
@@ -37,23 +34,28 @@
             <div class="col-sm-6 offset-3">
             <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
                 <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre" value="<?php echo $fila['nombre']; ?>">                    
+                    <label for="placa" class="form-label">Placa:</label>
+                    <input type="text" class="form-control" name="placa" placeholder="Ingresa la Placa" value="<?php echo $fila['placa']; ?>">                    
                 </div>
                 
                 <div class="mb-3">
-                    <label for="apellidos" class="form-label">Apellidos:</label>
-                    <input type="text" class="form-control" name="apellidos" placeholder="Ingresa los apellidos" value="<?php echo $fila['apellidos']; ?>">                    
+                    <label for="marca" class="form-label">Marca:</label>
+                    <input type="text" class="form-control" name="marca" placeholder="Ingresa la Marca" value="<?php echo $fila['marca']; ?>">                    
                 </div>
 
                 <div class="mb-3">
-                    <label for="telefono" class="form-label">Telefono:</label>
-                    <input type="number" class="form-control" name="telefono" placeholder="Ingresa el teléfono" value="<?php echo $fila['telefono']; ?>">                    
+                    <label for="modelo" class="form-label">Modelo:</label>
+                    <input type="text" class="form-control" name="modelo" placeholder="Ingresa el Modelo" value="<?php echo $fila['modelo']; ?>">                    
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" name="email" placeholder="Ingresa el email" value="<?php echo $fila['email']; ?>">                    
+                    <label for="precio" class="form-label">Precio:</label>
+                    <input type="number" class="form-control" name="precio" placeholder="Ingresa el Precio" value="<?php echo $fila['precio']; ?>">                    
+                </div>
+
+                <div class="mb-3">
+                    <label for="cedulaPropietario" class="form-label">Cedula propietario:</label>
+                    <input type="number" class="form-control" name="cedulaPropietario" placeholder="Ingresa la Cedula propietario" value="<?php echo isset($fila['cedula']) ? $fila['cedula'] : ''; ?>">                    
                 </div>
             
                 <button type="submit" class="btn btn-primary w-100" name="editarRegistro">Editar Registro</button>
