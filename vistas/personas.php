@@ -21,7 +21,7 @@
     <title>BM AGENCIA SEGUROS</title>
     </head>
     <body>
-    <nav class="navbar bg-primary" data-bs-theme="dark">
+    <nav class="navbar bg-dark" data-bs-theme="dark">
       <ul class="nav justify-content-center">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="../index.php">INICIO</a>
@@ -88,7 +88,6 @@
                           <td><?php echo $fila['email']; ?></td>
                           <td>
                           <a href="../formularios/formEditarPersona.php?id=<?php echo $fila['idPersonas']; ?>" class="btn btn-primary"> Editar</a>
-                          <!-- <a href="../formularios/formBorrarPersona.php?id=<?php echo $fila['idPersonas']; ?>" class="btn btn-danger"> Borrar</a> -->
                           </td>
                         </tr> 
                         <?php endwhile; ?>

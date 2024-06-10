@@ -19,7 +19,7 @@
         if(!isset($cedula) || $cedula == '' || !isset($nombre) || $nombre == '' || !isset($apellidos) || $apellidos == '' || !isset($telefono) || $telefono == '' || !isset($direccion) || $direccion == '' || !isset($barrio) || $barrio == ''|| !isset($email) || $email == ''){
             $error = "Algunos campos están vacíos";
         }else{
-            $query = "INSERT INTO Personas(cedula, nombre, apellidos, direccion, barrio, telefono, email)VALUES('$cedula', '$nombre', '$apellidos', '$direccion', '$barrio', '$telefono', '$email')";
+            $query = "INSERT INTO personas(cedula, nombre, apellidos, direccion, barrio, telefono, email)VALUES('$cedula', '$nombre', '$apellidos', '$direccion', '$barrio', '$telefono', '$email')";
             if(!mysqli_query($con, $query)){
                 die('Error: ' . mysqli_error($con));
                 $error = "Error, no se pudo crear el registro";
