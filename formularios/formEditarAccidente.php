@@ -16,10 +16,10 @@
   </head>
   <body>
     <h1 class="text-center">BM AGENCIA SEGUROS</h1>
-    <p class="text-center">Aprende a realizar las 4 operaciones básicas entre PHP y una base de datos, en este caso MYSQL: CRUD(Create, Read, Update, Delete)</p>
+    <p class="text-center">Edita los datos del accidente</p>
     <div class="container">
       <div class="row">
-        <h4>Editar un Registro Existente</h4>
+        <h4>Editar el accidente con # de referencia  <?php echo $fila['Numero_de_Referencia'] ; ?></h4>
       </div>
       <div class="row caja">
         <?php if(isset($error)) : ?>

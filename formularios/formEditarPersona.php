@@ -19,12 +19,12 @@
     </head>
     <body>
     <h1 class="text-center">BM AGENCIA SEGUROS</h1>
-    <p class="text-center">Actualiza a la persona</p>
+    <p class="text-center">edita los datos de la persona</p>
 
     <div class="container">
 
     <div class="row">
-        <h4>Editar un Registro Existente</h4>
+        <h4>Edita a <?php echo $fila['nombre'] . " " . $fila['apellidos']; ?></h4>
     </div>
 
 

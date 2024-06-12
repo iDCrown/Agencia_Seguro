@@ -62,6 +62,7 @@
           <table class="table table-striped">
             <thead>
               <tr>
+                <th># Referencia</th>
                 <th>Cedula</th>
                 <th>Placa</th>
                 <th>Fecha</th>
@@ -73,6 +74,7 @@
             <tbody>
               <?php while($fila = mysqli_fetch_assoc($resutl)) : ?>
               <tr>
+                <td><?php echo $fila['Numero_de_Referencia']; ?></td>
                 <td><?php echo $fila['cedula']; ?></td>
                 <td><?php echo $fila['placa']; ?></td>
                 <td><?php echo $fila['Fecha']; ?></td>

@@ -1,7 +1,28 @@
 <?php include '../config/conexion.php';?>
 <?php
     //Crear y seleccionar query
-    $query = "SELECT * FROM multas ORDER BY Numero_de_Referencia DESC";
+    $query = "SELECT 
+    m.Numero_de_Referencia, 
+    m.Fecha, 
+    m.Hora, 
+    m.Lugar,
+    m.Importe,  
+    p.cedula, 
+/*     p.nombre,
+    p.apellidos, */
+    v.placa
+FROM 
+    multas m
+INNER JOIN 
+    vehiculos v 
+ON 
+    m.PlacaVehiculo = v.idVehiculo
+INNER JOIN
+    personas p
+ON
+    m.idPersona = p.idPersonas 
+ORDER BY 
+    m.Numero_de_Referencia DESC";
     $multas = mysqli_query($con, $query);
 
 ?>
@@ -65,26 +86,29 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
-                            <th>Telefono</th>
-                            <th>Email</th>
-                            <th>Acciones</th>
+                            <th># Referencia</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Lugar</th>
+                            <th>Importe</th>
+                            <th>Responsable</th>
+                            <th>Vehículo</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         <?php while($fila = mysqli_fetch_assoc($multas)) : ?>
                         <tr>
-                            <td><?php echo $fila['id']; ?></td>
-                            <td><?php echo $fila['nombre']; ?></td>
-                            <td><?php echo $fila['apellidos']; ?></td>
-                            <td><?php echo $fila['telefono']; ?></td>
-                            <td><?php echo $fila['email']; ?></td>
+                            <td><?php echo $fila['Numero_de_Referencia']; ?></td>
+                            <td><?php echo $fila['Fecha']; ?></td>
+                            <td><?php echo $fila['Hora']; ?></td>
+                            <td><?php echo $fila['Lugar']; ?></td>
+                            <td><?php echo $fila['Importe']; ?></td>
+                            <td><?php echo $fila['cedula']; ?></td>
+                            <td><a href="vehiculos.php?placa=<?php echo $fila['placa']; ?>"><?php echo $fila['placa']; ?></a></td>
                             <td>
-                            <a href="../formularios/formEditarMulta.php?id=<?php echo $fila['id']; ?>" class="btn btn-primary"> Editar</a>
-                            <a href="../formularios/formBorrarMulta.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger"> Borrar</a>
+                            <a href="../formularios/formEditarMulta.php?id=<?php echo $fila['Numero_de_Referencia']; ?>" class="btn btn-primary"> Editar</a>
+                            <a href="../formularios/formBorrarMulta.php?id=<?php echo $fila['Numero_de_Referencia']; ?>" class="btn btn-danger"> Borrar</a>
                             </td>
                         </tr> 
 

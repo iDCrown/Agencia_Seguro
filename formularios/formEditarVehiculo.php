@@ -15,12 +15,12 @@
 </head>
 <body>
 <h1 class="text-center">BM AGENCIA SEGUROS</h1>
-<p class="text-center">Registra los datos del vehículo</p>
+<p class="text-center">Edita los datos del vehículo con placa <?php echo $fila['placa'] ; ?></p>
 
 <div class="container">
 
     <div class="row">
-        <h4>Edita a <?php echo $fila['nombre'] . " " . $fila['apellidos']; ?></h4>
+        <h4>Edita a el vehículo de <?php echo $fila['nombre'] . " " . $fila['apellidos']; ?> </h4>
     </div>   
 
 

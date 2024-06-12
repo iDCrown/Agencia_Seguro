@@ -1,6 +1,6 @@
 <?php
     //Incluimos conexión
-    include "../php/editarPersona.php";
+    include "../php/editarMulta.php";
 
 ?>
 <!doctype html>
@@ -24,7 +24,7 @@
     <div class="container">
 
     <div class="row">
-        <h4>Editar un Registro Existente</h4>
+        <h4>Edita la Multa con Numero de referencia #  <?php echo $fila['Numero_de_Referencia'] ; ?></h4>
     </div>
 
 
@@ -37,23 +37,33 @@
             <div class="col-sm-6 offset-3">
             <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
                 <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre" value="<?php echo $fila['nombre']; ?>">                    
+                    <label for="fecha" class="form-label">Fecha:</label>
+                    <input type="date" class="form-control" name="fecha" placeholder="Ingresa la fecha" value="<?php echo $fila['fecha']; ?>">                    
                 </div>
                 
                 <div class="mb-3">
-                    <label for="apellidos" class="form-label">Apellidos:</label>
-                    <input type="text" class="form-control" name="apellidos" placeholder="Ingresa los apellidos" value="<?php echo $fila['apellidos']; ?>">                    
+                    <label for="hora" class="form-label">Hora:</label>
+                    <input type="time" class="form-control" name="hora" placeholder="Ingresa la hora" value="<?php echo $fila['hora']; ?>">                    
                 </div>
 
                 <div class="mb-3">
-                    <label for="telefono" class="form-label">Telefono:</label>
-                    <input type="number" class="form-control" name="telefono" placeholder="Ingresa el teléfono" value="<?php echo $fila['telefono']; ?>">                    
+                    <label for="lugar" class="form-label">Lugar:</label>
+                    <input type="text" class="form-control" name="lugar" placeholder="Ingresa el lugar" value="<?php echo $fila['lugar']; ?>">                    
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" name="email" placeholder="Ingresa el email" value="<?php echo $fila['email']; ?>">                    
+                    <label for="importe" class="form-label">Importe:</label>
+                    <input type="number" class="form-control" name="importe" placeholder="Ingresa el importe" value="<?php echo $fila['importe']; ?>">                    
+                </div>
+
+                <div class="mb-3">
+                    <label for="cedulaPropietario" class="form-label">Cedula del responsable:</label>
+                    <input type="text" class="form-control" name="cedulaPropietario" placeholder="Ingresa la cedula" value="<?php echo $fila['cedula']; ?>">                    
+                </div>
+
+                <div class="mb-3">
+                    <label for="placa" class="form-label">Placa del vehículo:</label>
+                    <input type="text" class="form-control" name="placa" placeholder="Ingresa la placa" value="<?php echo $fila['placa']; ?>">                    
                 </div>
             
                 <button type="submit" class="btn btn-primary w-100" name="editarRegistro">Editar Registro</button>
