@@ -7,10 +7,10 @@
             ON a.Numero_de_Referencia = pa.idAccidente
             JOIN vehiculos v
             ON pa.idVehiculo = v.idVehiculo
-            JOIN personas p
+            JOIN personas p  
             ON v.idPropietario = p.idPersonas";
 
-  $resutl  = mysqli_query($con,$queryAV);
+  $resutl = mysqli_query($con,$queryAV);
   ?>
 <!doctype html>
 <html lang="es">
@@ -63,7 +63,7 @@
             <thead>
               <tr>
                 <th>Cedula</th>
-                <th>Placa</th>
+                <th>Placa</th><
                 <th>Fecha</th>
                 <th>Lugar</th>
                 <th>Hora</th>

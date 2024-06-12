@@ -1,7 +1,26 @@
 <?php include '../config/conexion.php';?>
 <?php
+
+
+
     //Crear y seleccionar query
-    $query = "SELECT * FROM vehiculos ORDER BY idVehiculo DESC";
+    $query = "SELECT 
+    vehiculos.idVehiculo, 
+    vehiculos.placa, 
+    vehiculos.marca, 
+    vehiculos.modelo, 
+    vehiculos.precio, 
+    personas.cedula, 
+    personas.nombre,
+    personas.apellidos
+FROM 
+    vehiculos 
+INNER JOIN 
+    personas 
+ON 
+    vehiculos.idPropietario = personas.idPersonas 
+ORDER BY 
+    vehiculos.idVehiculo DESC";
     $vehiculos = mysqli_query($con, $query);
 
 ?>
@@ -65,25 +84,28 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
-                            <th>Telefono</th>
-                            <th>Email</th>
-                            <th>Acciones</th>
+                            <th>Placa</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Precio</th>
+                            <th>propietario</th>
+                            <th>Cedula propietario</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         <?php while($fila = mysqli_fetch_assoc($vehiculos)) : ?>
                         <tr>
-                            <td><?php echo $fila['id']; ?></td>
-                            <td><?php echo $fila['nombre']; ?></td>
-                            <td><?php echo $fila['apellidos']; ?></td>
-                            <td><?php echo $fila['telefono']; ?></td>
-                            <td><?php echo $fila['email']; ?></td>
+                            <td><?php echo $fila['idVehiculo']; ?></td>
+                            <td><?php echo $fila['placa']; ?></td>
+                            <td><?php echo $fila['marca']; ?></td>
+                            <td><?php echo $fila['modelo']; ?></td>
+                            <td><?php echo $fila['precio']; ?></td>
+                            <td><?php echo $fila['nombre']. " " .$fila['apellidos']; ?></td>
+                            <td><?php echo $fila['cedula']; ?></td>
                             <td>
-                            <a href="../formularios/formEditarVehiculo.php?id=<?php echo $fila['id']; ?>" class="btn btn-primary"> Editar</a>
-                            <a href="../formularios/formBorrarVehiculo.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger"> Borrar</a>
+                            <a href="../formularios/formEditarVehiculo.php?id=<?php echo $fila['idVehiculo']; ?>" class="btn btn-primary"> Editar</a>
+                            <!-- <a href="../formularios/formBorrarVehiculo.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger"> Borrar</a> -->
                             </td>
                         </tr> 
 
