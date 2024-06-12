@@ -1,7 +1,28 @@
 <?php include '../config/conexion.php';?>
 <?php
     //Crear y seleccionar query
-    $query = "SELECT * FROM multas ORDER BY Numero_de_Referencia DESC";
+    $query = "SELECT 
+    m.Numero_de_Referencia, 
+    m.Fecha, 
+    m.Hora, 
+    m.Lugar,
+    m.Importe,  
+    p.cedula, 
+/*     p.nombre,
+    p.apellidos, */
+    v.placa
+FROM 
+    multas m
+INNER JOIN 
+    vehiculos v 
+ON 
+    m.PlacaVehiculo = v.idVehiculo
+INNER JOIN
+    personas p
+ON
+    m.idPersona = p.idPersonas 
+ORDER BY 
+    m.Numero_de_Referencia DESC";
     $multas = mysqli_query($con, $query);
 
 ?>
@@ -16,7 +37,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <link href="css/estilos.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
 
     <title>BM AGENCIA SEGUROS</title>
     </head>
@@ -42,49 +63,47 @@
     </nav>
     <h1 class="text-center">BM AGENCIA SEGUROS</h1>
     <p class="text-center">Registra personas, vehículos, accidentes y multas con seguridad en BM AGENCIA SEGUROS</p>
-    <p class="text-center">Ingresar datos de la multa</p>
-
-    <div class="container">
-
-
+    <div class="containerv">
         <?php if(isset($_GET['mensaje'])) : ?>                
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong><?php echo $_GET['mensaje']; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
-
         <div class="row">
             <div class="col-sm-4 offset-8">
                 <a href="../formularios/formCrearMulta.php" class="btn btn-success w-100">Crear Nuevo multa</a>
-            </div>            
+            </div>  
+            <h2>Multas</h2>             
         </div>
-
         <div class="row caja">
             <div class="col-sm-12">
-                <table class="table table-striped">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
-                            <th>Telefono</th>
-                            <th>Email</th>
-                            <th>Acciones</th>
+                            <th># Referencia</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Lugar</th>
+                            <th>Importe</th>
+                            <th>Responsable</th>
+                            <th>Vehículo</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         <?php while($fila = mysqli_fetch_assoc($multas)) : ?>
                         <tr>
-                            <td><?php echo $fila['id']; ?></td>
-                            <td><?php echo $fila['nombre']; ?></td>
-                            <td><?php echo $fila['apellidos']; ?></td>
-                            <td><?php echo $fila['telefono']; ?></td>
-                            <td><?php echo $fila['email']; ?></td>
+                            <td><?php echo $fila['Numero_de_Referencia']; ?></td>
+                            <td><?php echo $fila['Fecha']; ?></td>
+                            <td><?php echo $fila['Hora']; ?></td>
+                            <td><?php echo $fila['Lugar']; ?></td>
+                            <td><?php echo $fila['Importe']; ?></td>
+                            <td><?php echo $fila['cedula']; ?></td>
+                            <td><a href="vehiculos.php?placa=<?php echo $fila['placa']; ?>"><?php echo $fila['placa']; ?></a></td>
                             <td>
-                            <a href="../formularios/formEditarMulta.php?id=<?php echo $fila['id']; ?>" class="btn btn-primary"> Editar</a>
-                            <a href="../formularios/formBorrarMulta.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger"> Borrar</a>
+                            <a href="../formularios/formEditarMulta.php?id=<?php echo $fila['Numero_de_Referencia']; ?>" class="btn btn-primary"> Editar</a>
+                            <a href="../formularios/formBorrarMulta.php?id=<?php echo $fila['Numero_de_Referencia']; ?>" class="btn btn-danger"> Borrar</a>
                             </td>
                         </tr> 
 

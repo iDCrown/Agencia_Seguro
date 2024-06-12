@@ -9,18 +9,18 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <link href="css/estilos.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
 
     <title>BM AGENCIA SEGUROS</title>
 </head>
 <body>
-<h1 class="text-center">BM AGENCIA SEGUROS</h1>
-<p class="text-center">Registra los datos del vehículo</p>
+<h1  style="margin-top: 1em;" class="text-center">BM AGENCIA SEGUROS</h1>
+<p class="text-center">Edita los datos del vehículo con placa <?php echo $fila['placa'] ; ?></p>
 
 <div class="container">
 
     <div class="row">
-        <h4>Edita a <?php echo $fila['nombre'] . " " . $fila['apellidos']; ?></h4>
+        <h4>Edita a el vehículo de <?php echo $fila['nombre'] . " " . $fila['apellidos']; ?> </h4>
     </div>   
 
 

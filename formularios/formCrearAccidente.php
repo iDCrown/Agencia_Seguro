@@ -8,12 +8,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <link href="css/estilos.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
     <title>BM AGENCIA SEGUROS</title>
     </head>
     <body>
-    <h1 class="text-center">BM AGENCIA SEGUROS</h1>
-    <p class="text-center">Aprende a realizar las 4 operaciones básicas entre PHP y una base de datos, en este caso MYSQL: CRUD(Create, Read, Update, Delete)</p>
+    <h1  style="margin-top: 1em;" class="text-center">BM AGENCIA SEGUROS</h1>
+    <p class="text-center">Registra el Accidente</p>
     <div class="container">
       <div class="row">
         <h4>Crear un Nuevo Registro</h4>

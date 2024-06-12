@@ -7,7 +7,7 @@
 
     //Seleccionar datos
     $query = "SELECT * FROM usuarios where id='".$idRegistro."'";
-    $usuario = mysqli_query($con, $query) or die (mysqli_error());
+    $usuario = mysqli_query($con, $query) or die (mysqli_error( $con));
 
     //Volcamos los datos de ese registro en una fila
     $fila = mysqli_fetch_assoc($usuario);
@@ -38,21 +38,18 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <link href="css/estilos.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
 
     <title>BM AGENCIA SEGUROS</title>
   </head>
   <body>
-    <h1 class="text-center">BM AGENCIA SEGUROS</h1>
-    <p class="text-center">Aprende a realizar las 4 operaciones básicas entre PHP y una base de datos, en este caso MYSQL: CRUD(Create, Read, Update, Delete)</p>
+    <h1 style="margin-top: 1em;" class="text-center">BM AGENCIA SEGUROS</h1>
+    <p class="text-center">Eliminar multa</p>
 
     <div class="container">
-
-    <div class="row">
-        <h4>Borrar un Registro Existente</h4>
-    </div>
-
-
+        <div class="row">
+            <h4>Borrar un Registro Existente</h4>
+        </div>
         <div class="row caja">
             <div class="col-sm-6 offset-3">
             <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">

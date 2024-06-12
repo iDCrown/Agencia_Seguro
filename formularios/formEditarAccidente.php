@@ -11,15 +11,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <link href="css/estilos.css" rel="stylesheet">
+  <link href="../css/estilos.css" rel="stylesheet">
   <title>BM AGENCIA SEGUROS</title>
   </head>
   <body>
-    <h1 class="text-center">BM AGENCIA SEGUROS</h1>
-    <p class="text-center">Aprende a realizar las 4 operaciones básicas entre PHP y una base de datos, en este caso MYSQL: CRUD(Create, Read, Update, Delete)</p>
+    <h1  style="margin-top: 1em;" class="text-center">BM AGENCIA SEGUROS</h1>
+    <p class="text-center">Edita los datos del accidente</p>
     <div class="container">
       <div class="row">
-        <h4>Editar un Registro Existente</h4>
+        <h4>Editar el accidente con # de referencia  <?php echo $fila['Numero_de_Referencia'] ; ?></h4>
       </div>
       <div class="row caja">
         <?php if(isset($error)) : ?>

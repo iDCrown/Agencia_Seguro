@@ -16,7 +16,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <link href="css/estilos.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
 
     <title>BM AGENCIA SEGUROS</title>
     </head>
@@ -43,25 +43,22 @@
     <h1 class="text-center">BM AGENCIA SEGUROS</h1>
     <p class="text-center">Registra personas, vehículos, accidentes y multas con seguridad en BM AGENCIA SEGUROS</p>
 
-    <div class="container">
-
-
+    <div class="containerv">
         <?php if(isset($_GET['mensaje'])) : ?>                
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong><?php echo $_GET['mensaje']; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
-
         <div class="row">
             <div class="col-sm-4 offset-8">
                 <a href="../formularios/formCrearPersona.php" class="btn btn-success w-100"> Crear Nuevo Registro</a>
-            </div>            
+            </div>      
+            <h2>Personas</h2>         
         </div>
-
         <div class="row caja">
             <div class="col-sm-12">
-                <table class="table table-striped">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>#</th>

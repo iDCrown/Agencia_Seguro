@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="css/estilos.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
     <title>BM AGENCIA SEGUROS</title>
   </head>
   <body>
@@ -45,7 +45,7 @@
     </nav>
     <h1 class="text-center">BM AGENCIA SEGUROS</h1>
     <p class="text-center">Registra personas, vehículos, accidentes y multas con seguridad en BM AGENCIA SEGUROS</p>
-    <div class="container">
+    <div class="containerv">
       <?php if(isset($_GET['mensaje'])) : ?>                
         <div class="alert alert-success alert-dismissible fade show" role="alert">
           <strong><?php echo $_GET['mensaje']; ?>
@@ -55,13 +55,15 @@
       <div class="row">
         <div class="col-sm-4 offset-8">
           <a href="../formularios/formCrearAccidente.php" class="btn btn-success w-100"> Crear Nuevo Registro</a>
-        </div>            
+        </div>  
+        <h2>Accidentes</h2>          
       </div>
       <div class="row caja">
         <div class="col-sm-12">
-          <table class="table table-striped">
+          <table class="table table-bordered">
             <thead>
               <tr>
+                <th># Referencia</th>
                 <th>Cedula</th>
                 <th>Placa</th><
                 <th>Fecha</th>
@@ -73,6 +75,7 @@
             <tbody>
               <?php while($fila = mysqli_fetch_assoc($resutl)) : ?>
               <tr>
+                <td><?php echo $fila['Numero_de_Referencia']; ?></td>
                 <td><?php echo $fila['cedula']; ?></td>
                 <td><?php echo $fila['placa']; ?></td>
                 <td><?php echo $fila['Fecha']; ?></td>

@@ -11,7 +11,7 @@
 <nav class="navbar bg-dark" data-bs-theme="dark">
   <ul class="nav justify-content-center">
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="../index.php">INICIO</a>
+      <a class="nav-link active" aria-current="page" href="#">INICIO</a>
     </li>
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="./vistas/personas.php">Personas</a>
@@ -29,16 +29,26 @@
 </nav>
 <!-- carrousel -->
 
-<div id="carouselExample" class="carousel slide">
+
+<div id="carouselExample" style="display: flex; align-items: center; justify-content: center;" class="carousel slide">
+<h1 style="
+    color: aliceblue;
+    position: absolute;
+    font-family: monospace;
+    z-index: 2;
+    font-size: revert-layer;
+    font-weight: 800;
+">AGENCIA DE SEGUROS</h1>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
+    <span style="position: absolute; width: 100vw; height: 94vh; background: #21476ea1; z-index: 1;">.</span>
+    <div class="carousel-item active" >
+      <img src="./css/general-de-seguros-agentes.png" style="height: 94vh; object-fit: cover;" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="./css/15430784513964.jpg"  style="height: 94vh; object-fit: cover;" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="./css/banner-4.jpg" style="height: 94vh; object-fit: cover;" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
