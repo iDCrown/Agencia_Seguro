@@ -1,11 +1,10 @@
-<?php include "../php/creaPersona.php"?>
+<?php include "../php/crearAccidentes.php"?>
 <!doctype html>
 <html lang="es">
     <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -26,32 +25,20 @@
         <div class="col-sm-6 offset-3">
           <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <div class="mb-3">
-              <label for="cedula" class="form-label">Cedula:</label>
-              <input type="text" class="form-control" name="cedula" placeholder="Ingresa el cedula">                    
+              <label for="placa" class="form-label">Placa del vehiculo:</label>
+              <input type="text" class="form-control" name="placa" placeholder="Ingresa la placa del vehiculo">                    
             </div>
             <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre:</label>
-              <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre">                    
+              <label for="Fecha" class="form-label">Fecha:</label>
+              <input type="date" class="form-control" name="Fecha" placeholder="Ingresa la Fecha">                    
             </div>
             <div class="mb-3">
-              <label for="apellidos" class="form-label">Apellidos:</label>
-              <input type="text" class="form-control" name="apellidos" placeholder="Ingresa los apellidos">                    
+              <label for="Lugar" class="form-label">Lugar:</label>
+              <input type="text" class="form-control" name="Lugar" placeholder="Ingresa el Lugar">                    
             </div>
             <div class="mb-3">
-              <label for="direccion" class="form-label">Direccion:</label>
-              <input type="text" class="form-control" name="direccion" placeholder="Ingresa los direccion">                    
-            </div>
-            <div class="mb-3">
-              <label for="barrio" class="form-label">Barrio:</label>
-              <input type="text" class="form-control" name="barrio" placeholder="Ingresa los barrio">                    
-            </div>
-            <div class="mb-3">
-              <label for="telefono" class="form-label">Telefono:</label>
-              <input type="number" class="form-control" name="telefono" placeholder="Ingresa el teléfono">                    
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email:</label>
-              <input type="email" class="form-control" name="email" placeholder="Ingresa el email">                    
+              <label for="Hora" class="form-label">Hora:</label>
+              <input type="time" class="form-control" name="Hora" placeholder="Ingresa la Hora">                    
             </div>
             <button type="submit" class="btn btn-primary w-100" name="crearRegistro">Crear Registro</button>
           </form>

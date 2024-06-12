@@ -1,4 +1,4 @@
-<?php include "../php/creaPersona.php"?>
+<?php include "../php/crearVehiculo.php"?>
 <!doctype html>
 <html lang="es">
     <head>
@@ -14,10 +14,10 @@
     </head>
     <body>
     <h1 class="text-center">BM AGENCIA SEGUROS</h1>
-    <p class="text-center">Aprende a realizar las 4 operaciones básicas entre PHP y una base de datos, en este caso MYSQL: CRUD(Create, Read, Update, Delete)</p>
+    <p class="text-center">Registra el vehículo junto a su propietario</p>
     <div class="container">
       <div class="row">
-        <h4>Crear un Nuevo Registro</h4>
+        <h4>Vehículos</h4>
       </div>   
       <div class="row caja">
         <?php if(isset($error)) : ?>
@@ -26,32 +26,24 @@
         <div class="col-sm-6 offset-3">
           <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <div class="mb-3">
-              <label for="cedula" class="form-label">Cedula:</label>
-              <input type="text" class="form-control" name="cedula" placeholder="Ingresa el cedula">                    
+              <label for="placa" class="form-label">Placa:</label>
+              <input type="text" class="form-control" name="placa" id="placa" required placeholder="Ingresa el Placa">                    
             </div>
             <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre:</label>
-              <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre">                    
+              <label for="marca" class="form-label">Marca:</label>
+              <input type="text" class="form-control" name="marca" id="marca" required placeholder="Ingresa el Marca">                    
             </div>
             <div class="mb-3">
-              <label for="apellidos" class="form-label">Apellidos:</label>
-              <input type="text" class="form-control" name="apellidos" placeholder="Ingresa los apellidos">                    
+              <label for="modelo" class="form-label">Modelo:</label>
+              <input type="text" class="form-control" name="modelo" id="modelo" required placeholder="Ingresa el Modelo">                    
             </div>
             <div class="mb-3">
-              <label for="direccion" class="form-label">Direccion:</label>
-              <input type="text" class="form-control" name="direccion" placeholder="Ingresa los direccion">                    
+              <label for="precio" class="form-label">Precio:</label>
+              <input type="number" class="form-control" name="precio"  id="precio" required placeholder="Ingresa los Precio">                    
             </div>
             <div class="mb-3">
-              <label for="barrio" class="form-label">Barrio:</label>
-              <input type="text" class="form-control" name="barrio" placeholder="Ingresa los barrio">                    
-            </div>
-            <div class="mb-3">
-              <label for="telefono" class="form-label">Telefono:</label>
-              <input type="number" class="form-control" name="telefono" placeholder="Ingresa el teléfono">                    
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email:</label>
-              <input type="email" class="form-control" name="email" placeholder="Ingresa el email">                    
+              <label for="cedulaPropietario" class="form-label">Cedula del propietario:</label>
+              <input type="number" class="form-control" name="cedulaPropietario" id="cedulaPropietario" required placeholder="Ingresa la cedula del propietario">                    
             </div>
             <button type="submit" class="btn btn-primary w-100" name="crearRegistro">Crear Registro</button>
           </form>
